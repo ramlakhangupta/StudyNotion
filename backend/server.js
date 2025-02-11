@@ -5,7 +5,9 @@ const app = express();
 const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-require('dotenv').config();
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 // connection to DB and cloudinary
 const { connectDB } = require('./config/database');
@@ -31,7 +33,7 @@ app.use(
 app.use(
     fileUpload({
         useTempFiles: true,
-        tempFileDir: '/tmp'
+        tempFileDir: '/tmp/'
     })
 )
 

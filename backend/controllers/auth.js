@@ -36,7 +36,7 @@ exports.sendOTP = async (req, res) => {
             lowerCaseAlphabets: false,
             specialChars: false
         })
-        // console.log('Your otp - ', otp);
+        console.log('Your otp - ', otp);
 
         const name = email.split('@')[0].split('.').map(part => part.replace(/\d+/g, '')).join(' ');
         console.log(name);
