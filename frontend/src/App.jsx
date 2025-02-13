@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { Route, Routes, useLocation, Link } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import Home from "./pages/Home"

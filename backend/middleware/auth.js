@@ -118,7 +118,7 @@ exports.isInstructor = (req, res, next) => {
 // ================ IS ADMIN ================
 exports.isAdmin = (req, res, next) => {
     try {
-        // console.log('User data -> ', req.user)
+        // ('User data -> ', req.user)
         if (req.user.accountType != 'Admin') {
             return res.status(401).json({
                 success: false,

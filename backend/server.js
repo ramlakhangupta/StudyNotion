@@ -18,6 +18,7 @@ const userRoutes = require('./routes/user');
 const profileRoutes = require('./routes/profile');
 const paymentRoutes = require('./routes/payments');
 const courseRoutes = require('./routes/course');
+const router = express.Router();
 
 
 // middleware 
@@ -25,8 +26,7 @@ app.use(express.json()); // to parse json body
 app.use(cookieParser());
 app.use(
     cors({
-        // origin: 'http://localhost:5173', // frontend link
-        origin: "*",
+        origin: ['http://localhost:5173', process.env.FRONTEND_URL], // frontend link
         credentials: true
     })
 );
@@ -44,6 +44,7 @@ app.listen(PORT, () => {
     console.log(`Server Started on PORT ${PORT}`);
 });
 
+
 // connections
 connectDB();
 cloudinaryConnect();
@@ -53,8 +54,6 @@ app.use('/api/v1/auth', userRoutes);
 app.use('/api/v1/profile', profileRoutes);
 app.use('/api/v1/payment', paymentRoutes);
 app.use('/api/v1/course', courseRoutes);
-
-
 
 
 // Default Route

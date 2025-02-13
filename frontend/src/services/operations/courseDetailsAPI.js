@@ -122,7 +122,7 @@ export const fetchCourseCategories = async () => {
 
   try {
     const response = await apiConnector("GET", COURSE_CATEGORIES_API)
-    console.log("COURSE_CATEGORIES_API RESPONSE............", response)
+    
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch Course Categories")
     }
@@ -145,7 +145,7 @@ export const addCourseDetails = async (data, token) => {
       "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${token}`,
     })
-    console.log("CREATE COURSE API RESPONSE............", response)
+    
 
     if (!response?.data?.success) {
       throw new Error("Could Not Add Course Details")
@@ -172,8 +172,7 @@ export const editCourseDetails = async (data, token) => {
       "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${token}`,
     })
-    console.log("EDIT COURSE API RESPONSE............", response)
-
+   
     if (!response?.data?.success) {
       throw new Error("Could Not Update Course Details")
     }
