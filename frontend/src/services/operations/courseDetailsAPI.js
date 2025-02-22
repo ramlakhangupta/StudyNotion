@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast"
 
-import { updateCompletedLectures } from "../../slices/viewCourseSlice"
+//import { updateCompletedLectures } from "../../slices/viewCourseSlice"
 // import { setLoading } from "../../slices/profileSlice";
 import { apiConnector } from "../apiConnector"
 import { courseEndpoints } from "../apis"
@@ -100,7 +100,7 @@ export const fetchCourseDetails = async (courseId) => {
 
   try {
     const response = await apiConnector("POST", COURSE_DETAILS_API, { courseId, })
-    console.log("COURSE_DETAILS_API API RESPONSE............", response)
+    //console.log("COURSE_DETAILS_API API RESPONSE............", response)
 
     if (!response.data.success) {
       throw new Error(response.data.message)
